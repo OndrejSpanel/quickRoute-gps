@@ -424,39 +424,32 @@ namespace QuickRoute.BusinessEntities
       }
 
       // add map reading duration settings, introduced in QR 2.4
-      // add cadence and power, introduced September 2014
-      var attributes = new[] { WaypointAttribute.MapReadingDuration, WaypointAttribute.Cadence, WaypointAttribute.Power };
-
-      foreach (var attribute in attributes)
+      if (!doc.Settings.ColorRangeIntervalSliderSettings.ContainsKey(WaypointAttribute.MapReadingDuration))
       {
-        if (!doc.Settings.ColorRangeIntervalSliderSettings.ContainsKey(attribute))
-        {
-          var defaultCRISS = DocumentSettings.CreateDefaultColorRangeIntervalSliderSettings();
-          doc.Settings.ColorRangeIntervalSliderSettings.Add(attribute, defaultCRISS[attribute]);
-        }
-
-        if (!doc.Settings.LapHistogramSettings.ContainsKey(attribute))
-        {
-          var defaultLHS = DocumentSettings.CreateDefaultLapHistogramSettings();
-          doc.Settings.LapHistogramSettings.Add(attribute, defaultLHS[attribute]);
-        }
-
-        if (!doc.Settings.DefaultSessionSettings.SmoothingIntervals.ContainsKey(attribute))
-        {
-          doc.Settings.DefaultSessionSettings.SmoothingIntervals[attribute] = new Interval(0, 0);
-        }
+        var defaultCRISS = DocumentSettings.CreateDefaultColorRangeIntervalSliderSettings();
+        doc.Settings.ColorRangeIntervalSliderSettings.Add(WaypointAttribute.MapReadingDuration, defaultCRISS[WaypointAttribute.MapReadingDuration]);
       }
+
+      if (!doc.Settings.LapHistogramSettings.ContainsKey(WaypointAttribute.MapReadingDuration))
+      {
+        var defaultLHS = DocumentSettings.CreateDefaultLapHistogramSettings();
+        doc.Settings.LapHistogramSettings.Add(WaypointAttribute.MapReadingDuration, defaultLHS[WaypointAttribute.MapReadingDuration]);
+      }
+
+      if (!doc.Settings.DefaultSessionSettings.SmoothingIntervals.ContainsKey(WaypointAttribute.MapReadingDuration))
+      {
+        doc.Settings.DefaultSessionSettings.SmoothingIntervals[WaypointAttribute.MapReadingDuration] = new Interval(0, 0);
+      }
+
 
       foreach (Session s in doc.sessions)
       {
-        foreach (var attribute in attributes)
+        if (!s.Settings.RouteLineSettingsCollection.ContainsKey(WaypointAttribute.MapReadingDuration))
         {
-          if (!s.Settings.RouteLineSettingsCollection.ContainsKey(attribute))
-          {
-            s.Settings.RouteLineSettingsCollection.Add(attribute, defaultRLS[attribute]);
-          }
+          s.Settings.RouteLineSettingsCollection.Add(WaypointAttribute.MapReadingDuration, defaultRLS[WaypointAttribute.MapReadingDuration]);
         }
       }
+
     }
 
     private static Bitmap Base64StringToBitmap(string base64String)

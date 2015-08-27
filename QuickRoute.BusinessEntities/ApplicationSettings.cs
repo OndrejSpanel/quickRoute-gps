@@ -245,14 +245,6 @@ namespace QuickRoute.BusinessEntities
                    new SelectableRoutePropertyType(typeof (AveragePaceWhenReadingMapFromStart), false),
                    new SelectableRoutePropertyType(typeof (AveragePaceWhenNotReadingMap), false),
                    new SelectableRoutePropertyType(typeof (AveragePaceWhenNotReadingMapFromStart), false),
-                   new SelectableRoutePropertyType(typeof (AverageCadence), false),
-                   new SelectableRoutePropertyType(typeof (AverageCadenceFromStart), false),
-                   new SelectableRoutePropertyType(typeof (MaxCadence), false),
-                   new SelectableRoutePropertyType(typeof (MaxCadenceFromStart), false),
-                   new SelectableRoutePropertyType(typeof (AveragePower), false),
-                   new SelectableRoutePropertyType(typeof (AveragePowerFromStart), false),
-                   new SelectableRoutePropertyType(typeof (MaxPower), false),
-                   new SelectableRoutePropertyType(typeof (MaxPowerFromStart), false),
                  };
       }
     }
@@ -325,16 +317,6 @@ namespace QuickRoute.BusinessEntities
                    new SelectableRoutePropertyType(typeof (AveragePaceWhenNotReadingMapFromStart), false),
                    new SelectableRoutePropertyType(typeof (PreviousMapReadingEnd), false),
                    new SelectableRoutePropertyType(typeof (NextMapReadingStart), false),
-                   new SelectableRoutePropertyType(typeof (RouteProperties.Cadence), false),
-                   new SelectableRoutePropertyType(typeof (AverageCadence), false),
-                   new SelectableRoutePropertyType(typeof (AverageCadenceFromStart), false),
-                   new SelectableRoutePropertyType(typeof (MaxCadence), false),
-                   new SelectableRoutePropertyType(typeof (MaxCadenceFromStart), false),
-                   new SelectableRoutePropertyType(typeof (RouteProperties.Power), false),
-                   new SelectableRoutePropertyType(typeof (AveragePower), false),
-                   new SelectableRoutePropertyType(typeof (AveragePowerFromStart), false),
-                   new SelectableRoutePropertyType(typeof (MaxPower), false),
-                   new SelectableRoutePropertyType(typeof (MaxPowerFromStart), false),
                  };
       }
     }

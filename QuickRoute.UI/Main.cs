@@ -101,9 +101,7 @@ namespace QuickRoute.UI
                                               new WaypointAttributeString(WaypointAttribute.HeartRate),
                                               new WaypointAttributeString(WaypointAttribute.Altitude),
                                               new WaypointAttributeString(WaypointAttribute.DirectionDeviationToNextLap),
-                                              new WaypointAttributeString(WaypointAttribute.MapReadingDuration),
-                                              new WaypointAttributeString(WaypointAttribute.Cadence),
-                                              new WaypointAttributeString(WaypointAttribute.Power)
+                                              new WaypointAttributeString(WaypointAttribute.MapReadingDuration)
                                             };
       foreach (var item in cca)
       {
@@ -118,9 +116,7 @@ namespace QuickRoute.UI
                                               new WaypointAttributeString(WaypointAttribute.HeartRate),
                                               new WaypointAttributeString(WaypointAttribute.Altitude),
                                               new WaypointAttributeString(WaypointAttribute.DirectionDeviationToNextLap),
-                                              new WaypointAttributeString(WaypointAttribute.MapReadingDuration),
-                                              new WaypointAttributeString(WaypointAttribute.Cadence),
-                                              new WaypointAttributeString(WaypointAttribute.Power)
+                                              new WaypointAttributeString(WaypointAttribute.MapReadingDuration)
                                             };
       foreach (var item in scca)
       {
@@ -1155,8 +1151,6 @@ namespace QuickRoute.UI
             break;
           case WaypointAttribute.HeartRate:
           case WaypointAttribute.Altitude:
-          case WaypointAttribute.Cadence:
-          case WaypointAttribute.Power:
             slider.ScaleCreator = new DoubleScaleCreator(sliderSettings.MinValue, sliderSettings.MaxValue, 20, false);
             slider.NumericConverter = new IntConverter();
             break;
