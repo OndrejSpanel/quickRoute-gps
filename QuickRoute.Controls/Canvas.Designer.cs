@@ -50,6 +50,8 @@ namespace QuickRoute.Controls
       this.canvasPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CanvasPanel_MouseDown);
       this.canvasPanel.Resize += new System.EventHandler(this.CanvasPanel_Resize);
       this.canvasPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CanvasPanel_MouseUp);
+      this.canvasPanel.MouseEnter += new System.EventHandler(this.CanvasPanel_MouseEnter);
+      this.canvasPanel.MouseLeave += new System.EventHandler(this.CanvasPanel_MouseLeave);
       // 
       // scrXPanel
       // 
@@ -102,7 +104,6 @@ namespace QuickRoute.Controls
       this.Controls.Add(this.canvasPanel);
       this.Name = "Canvas";
       this.Size = new System.Drawing.Size(361, 216);
-      this.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.CanvasPanel_MouseWheel);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Canvas_KeyDown);
       this.scrXPanel.ResumeLayout(false);
       this.ResumeLayout(false);

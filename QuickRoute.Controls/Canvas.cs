@@ -1319,6 +1319,18 @@ namespace QuickRoute.Controls
       }
     }
 
+    private void CanvasPanel_MouseEnter(object sender, EventArgs e)
+    {
+      if (!canvasPanel.Focused)
+        canvasPanel.Focus();
+    }
+
+    private void CanvasPanel_MouseLeave(object sender, EventArgs e)
+    {
+      if (canvasPanel.Focused)
+        canvasPanel.Parent.Focus();
+    }
+
     private void CanvasPanel_Paint(object sender, PaintEventArgs e)
     {
       UpdateBackBuffer(e.ClipRectangle);
