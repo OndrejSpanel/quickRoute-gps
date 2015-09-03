@@ -95,6 +95,10 @@ namespace QuickRoute.UI.Forms
     {
       get
       {
+        if (!string.IsNullOrEmpty(routeFileName.Text))
+        {
+          return Path.GetFileNameWithoutExtension(routeFileName.Text) + ".qrt";
+        }
         if (!string.IsNullOrEmpty(mapImageFileName.Text))
         {
           return Path.GetFileNameWithoutExtension(mapImageFileName.Text) + ".qrt";
