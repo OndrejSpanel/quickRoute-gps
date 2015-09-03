@@ -931,6 +931,11 @@ namespace QuickRoute.BusinessEntities
         return (start.GetHashCode()*397) ^ end.GetHashCode();
       }
     }
+
+    public override string ToString()
+    {
+      return string.Format("({0}..{1})", start, end);
+    }
   }
 
 }
