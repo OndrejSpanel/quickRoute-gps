@@ -224,6 +224,16 @@ namespace QuickRoute.BusinessEntities
       }
     }
 
+    public void SetSessionsSmoothingIntervals()
+    {
+      foreach (Session s in Sessions)
+      {
+        s.Route.SmoothingIntervals = Settings.DefaultSessionSettings.SmoothingIntervals;
+      }
+    }
+
+
+
     public Bitmap CreateMapImage(double zoom)
     {
       Size size = GetMapImageSize(zoom);

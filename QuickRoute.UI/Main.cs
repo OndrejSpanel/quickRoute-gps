@@ -419,6 +419,9 @@ namespace QuickRoute.UI
         canvas.CurrentSession = canvas.Document.Sessions[0];
         canvas.SelectedSessions = new SessionCollection();
         canvas.SelectedSessions.Add(canvas.CurrentSession);
+
+        canvas.Document.SetSessionsSmoothingIntervals();
+
         //if (ApplicationSettings.AutoAdjustColorRangeInterval) PerformColorRangeIntervalAutoAdjustment();
         updatingUINowCounter++;
         PopulateSessionList();
@@ -1757,10 +1760,8 @@ namespace QuickRoute.UI
         if (SelectedColorCodingAttribute == WaypointAttribute.Pace)
           canvas.Document.Settings.DefaultSessionSettings.SmoothingIntervals[WaypointAttribute.Speed] = new Interval(canvas.Document.Settings.DefaultSessionSettings.SmoothingIntervals[SelectedColorCodingAttribute]);
 
-        foreach (Session s in canvas.Document.Sessions)
-        {
-          s.Route.SmoothingIntervals = canvas.Document.Settings.DefaultSessionSettings.SmoothingIntervals;
-        }
+        canvas.Document.SetSessionsSmoothingIntervals();
+
         canvas.DrawMap(Canvas.MapDrawingFlags.Route | Canvas.MapDrawingFlags.Markers);
         CalculateLapInfo();
         CreateLapHistogram();
